@@ -28,7 +28,7 @@ jobs:
     runs-on: ${{matrix.os}}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [windows-latest]
     steps:
       - name: "Checkout"
         uses: actions/checkout@v3.0.0
@@ -55,28 +55,6 @@ jobs:
           name: ${{matrix.os}}
           path: "./Artifacts"
 
-  push-github-packages:
-    name: "Push GitHub Packages"
-    needs: build
-    if: github.ref == 'refs/heads/main' || github.event_name == 'release'
-    environment:
-      name: "GitHub Packages"
-      url: https://github.com/tiberriver256/Selenium.ReactMUI/packages
-    permissions:
-      packages: write
-    runs-on: windows-latest
-    steps:
-      - name: "Download Artefact"
-        uses: actions/download-artifact@v3.0.0
-        with:
-          name: "windows-latest"
-      - name: "Dotnet NuGet Add Source"
-        run: dotnet nuget add source https://nuget.pkg.github.com/tiberriver256/index.json --name GitHub --username tiberriver256 --password ${{secrets.GITHUB_TOKEN}}
-        shell: pwsh
-      - name: "Dotnet NuGet Push"
-        run: dotnet nuget push .\*.nupkg --api-key ${{ github.token }} --source GitHub --skip-duplicate
-        shell: pwsh
-
   push-nuget:
     name: "Push NuGet Packages"
     needs: build
@@ -86,7 +64,7 @@ jobs:
       url: https://www.nuget.org/packages/Selenium.ReactMUI
     runs-on: windows-latest
     steps:
-      - name: "Download Artefact"
+      - name: "Download Artifact"
         uses: actions/download-artifact@v3.0.0
         with:
           name: "windows-latest"
