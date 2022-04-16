@@ -17,7 +17,6 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/tiberriver256/Selenium.ReactMUI</PackageProjectUrl>
-    <PackageIcon>Icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/tiberriver256/Selenium.ReactMUI.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
