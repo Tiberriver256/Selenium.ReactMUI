@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Build">
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package">
+    <Product>Selenium.ReactMUI</Product>
+    <Description>A set of Selenium components to make testing React MUI components easier.</Description>
+    <PackageTags>Selenium;React MUI v5</PackageTags>
+  </PropertyGroup>
+
+</Project>
