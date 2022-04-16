@@ -49,11 +49,11 @@ jobs:
       - name: "Dotnet Cake Pack"
         run: dotnet cake --target=Pack
         shell: pwsh
-      - name: "Publish Artefacts"
+      - name: "Publish Artifacts"
         uses: actions/upload-artifact@v3.0.0
         with:
           name: ${{matrix.os}}
-          path: "./Artefacts"
+          path: "./Artifacts"
 
   push-github-packages:
     name: "Push GitHub Packages"
