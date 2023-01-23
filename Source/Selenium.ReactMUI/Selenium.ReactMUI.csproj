@@ -13,7 +13,7 @@
     <Exec Command="dotnet husky install" StandardOutputImportance="Low" StandardErrorImportance="High" WorkingDirectory="..\.." />
   </Target>
   <ItemGroup>
-    <PackageReference Include="Selenium.Support" Version="4.1.1" />
+    <PackageReference Include="Selenium.Support" Version="4.8.0" />
     <PackageReference Include="Selenium.WebDriver" Version="4.1.1" />
   </ItemGroup>
 </Project>
